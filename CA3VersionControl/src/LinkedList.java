@@ -24,4 +24,29 @@ public class LinkedList {
   	{
   		return numItems;
   	}  // end size
+  	
+  	
+	    public void add(int index, Object item)
+	            throws ListIndexOutOfBoundsException {
+	if (index >= 0 && index <= numItems) {
+	if (index == 0) {
+	  // insert the new node containing item at
+	  // beginning of list
+		Node newNode = new Node(item, head);
+		head = newNode;
+	}
+	else {
+	  Node prev = find(index-1);
+	  // insert the new node containing item after
+	  // the node that prev references
+		Node newNode = new Node(item, prev.getNext());
+		prev.setNext(newNode);
+	} // end if
+	numItems++;
+	}
+	else {
+	throw new ListIndexOutOfBoundsException(
+	          "List index out of bounds on add");
+	} // end if
+	}  // end add
 }
