@@ -24,4 +24,7 @@ public class LinkedList {
   	{
   		return numItems;
   	}  // end size
+  	public void remove() {
+  		
+  	}
 }
