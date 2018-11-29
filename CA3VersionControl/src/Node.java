@@ -1,5 +1,5 @@
 public class Node {
-  private Object item;
+  private Object item1;
   private Node next;
 
   public Node(Object newItem) {
