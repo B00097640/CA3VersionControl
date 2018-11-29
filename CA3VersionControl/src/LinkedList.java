@@ -24,7 +24,24 @@ public class LinkedList {
   	{
   		return numItems;
   	}  // end size
-  	public void remove() {
-  		
-  	}
+  	public void remove(int index)
+            throws ListIndexOutOfBoundsException {
+
+if(index < 0 || index >= count)
+ throw(new ArrayIndexOutOfBoundsException("Bad delete (bad index(" + index + "), max(" + (count-1) + "))!"));
+
+
+if(index == 0) {
+ head = head.getNext();
+ count--;
+ return;
+}
+
+
+Node previousNode = find(index);
+previousNode.setNext(previousNode.getNext().getNext());
+count--;
+}
+
+}   // end remove
 }
